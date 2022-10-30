@@ -1,6 +1,6 @@
 import './style.css'
+// import './sendmail.php'
 import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             form.classList.add('_sending');
             let response = await fetch ('sendmail.php', {
                 method: 'POST',
-                bode: formDate
+                body: formData
             });
             if (response.ok) {
                 let result = await response.json();
